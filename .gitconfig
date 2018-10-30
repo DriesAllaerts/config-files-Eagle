@@ -1,0 +1,12 @@
+[user]
+	email = dries.allaerts@nrel.gov
+	name = Dries Allaerts
+[push]
+	default = simple
+[core]
+	fileMode = false
+	filemode = false
+	editor = vim
+[alias]
+	tree = log --all --graph --decorate --oneline --color --simplify-by-decoration
+	longtree = log --all --graph --decorate --oneline --color

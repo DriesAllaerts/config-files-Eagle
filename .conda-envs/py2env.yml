@@ -1,0 +1,8 @@
+name: py2env
+dependencies:
+  - python=2
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - ipython

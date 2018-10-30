@@ -1,0 +1,11 @@
+name: py3env
+dependencies:
+  - python=3.6.*
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - ipython
+  - netCDF4
+  - mpi4py
+  - vtk

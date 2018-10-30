@@ -1,0 +1,23 @@
+/*
+/*/
+!.gitignore
+!README.md
+
+# Global git configuration file
+!.gitconfig
+
+# General configuration files related to Peregrine HPC system
+!.bash_profile
+!.bash_aliases
+!.bashrc
+
+# Vim configuration file
+!.vimrc
+
+# Python environment setup files
+# Forcefully add .conda-envs/*.yml with
+# git add -f .conda-envs/*.yml
+
+# Ipython configuration file
+# Forcefully add .ipython/profile_default/ipython_config.py with
+# git add -f .ipython/profile_default/ipython_config.py
