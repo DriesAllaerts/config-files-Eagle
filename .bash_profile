@@ -56,10 +56,22 @@ function parse_git_dirty {
   fi
 }
 
+# Enable git branch display in bash prompt
+gitactivate()
+{
+  export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `parse_git_branch` `date +%H:%M` $ '
+}
+
+# Disable git branch display in bash prompt and revert to standard prompt
+gitdeactivate()
+{
+  export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `date +%H:%M` $ '
+}
+
 # Configure the shell environment
   #export PS1="\u@\w \`parse_git_branch\`$ "
-  #export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `date +%H:%M` $ '
-  export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `parse_git_branch` `date +%H:%M` $ '
+  export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `date +%H:%M` $ '
+  #export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `parse_git_branch` `date +%H:%M` $ '
   export EDITOR=/usr/bin/vim
   export BLOCKSIZE=1k # Set default blocksize for ls, df, du, from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
 
