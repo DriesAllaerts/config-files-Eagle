@@ -268,19 +268,19 @@ ijob() {
     case $# in
     "0" )
       echo "Requesting 1 node with 24 procs for 4 h in queue short"
-      qsub -V -I -l nodes=1:ppn=24,walltime=4:00:00 -A windsim -q short
+      qsub -V -I -l nodes=1:ppn=24,walltime=4:00:00 -A mmc -q short
       ;;
     "2" )
       echo "Requesting $1 node(s) with $2 proc(s) for 4 h in queue short"
-      qsub -V -I -l nodes=$1:ppn=$2,walltime=4:00:00 -A windsim -q short
+      qsub -V -I -l nodes=$1:ppn=$2,walltime=4:00:00 -A mmc -q short
       ;;
     "3" )
       echo "Requesting $1 node(s) with $2 proc(s) for $3 h in queue short"
-      qsub -V -I -l nodes=$1:ppn=$2,walltime=$3:00 -A windsim -q short
+      qsub -V -I -l nodes=$1:ppn=$2,walltime=$3:00 -A mmc -q short
       ;;
     "4" )
       echo "Requesting $1 node(s) with $2 proc(s) for $3 h in queue $4"
-      qsub -V -I -l nodes=$1:ppn=$2,walltime=$3:00 -A windsim -q $4
+      qsub -V -I -l nodes=$1:ppn=$2,walltime=$3:00 -A mmc -q $4
       ;;
     * )
       echo "I don't know what these options mean"
