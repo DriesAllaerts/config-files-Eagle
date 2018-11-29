@@ -86,7 +86,7 @@ sourcePYTHON3()
     module purge
     module load conda/5.1
     source activate py3env
-    export PYTHONPATH=/home/dallaert/pytools:/home/dallaert/PostTools:$PYTHONPATH
+    export PYTHONPATH=/home/dallaert/Python:/home/dallaert/PostTools:$PYTHONPATH
     export PATH=/home/dallaert/PostTools:$PATH
     export PATH=/home/dallaert/PostTools/datatools/utilities:$PATH
 }
