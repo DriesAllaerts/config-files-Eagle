@@ -137,7 +137,7 @@ OpenFOAM-2.4.x-central()
    # Set the OpenFOAM version and installation directory
    export OPENFOAM_VERSION=2.4.x
    export OPENFOAM_NAME=OpenFOAM-$OPENFOAM_VERSION
-   export FOAM_INST_DIR=/projects/windsim/OpenFOAM
+   export FOAM_INST_DIR=/projects/wakedynamics/OpenFOAM
 
    foamDotFile=$FOAM_INST_DIR/$OPENFOAM_NAME/etc/bashrc
    if [ -f $foamDotFile ] ; then
