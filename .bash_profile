@@ -161,7 +161,7 @@ OpenFOAM-2.4.x-central()
 OpenFOAM-2.4.x-local()
 {
    if [ $# == 0 ]; then
-       export SOWFA_VERSION=SOWFA
+       export SOWFA_VERSION=SOWFA-production
    else
        export SOWFA_VERSION=$1
    fi
