@@ -124,6 +124,52 @@ foamCopyCase()
 }
 
 
+# Start interactive job in debug partition
+# Limits:
+# - 1 node per user
+# - 24 hour walltime max
+idebug() {
+    case $# in
+    "0" )
+        echo "Requesting 1 node with 36 processors for 4 h in debug partition"
+        salloc --nodes=1 --ntasks-per-node=36 --time=4:00:00 --account=mmc --partition=debug
+        ;;
+    "1" )
+        if [ $1 -gt 24 ]; then
+            echo "Max walltime in debug partition is 24 h"
+            return 1
+        
+        fi
+
+        echo "Requesting 1 node with 36 processors for $1 h in debug partition"
+        salloc --nodes=1 --ntasks-per-node=36 --time=$1:00:00 --account=mmc --partition=debug
+        ;;
+    * )
+        echo "I don't know what these options mean"
+    esac
+}
+
+
+# Start interactive job
+ijob() {
+    case $# in
+    "0" )
+        idebug
+        ;;
+    "2" )
+        echo "Requesting $1 node(s) with $2 processor(s) for 4 h"
+        salloc --nodes=$1 --ntasks-per-node=$2 --time=4:00:00 --account=mmc
+        ;;
+    "3" )
+        echo "Requesting $1 node(s) with $2 processor(s) for $3 h"
+        salloc --nodes=$1 --ntasks-per-node=$2 --time=$3:00:00 --account=mmc
+        ;;
+    * )
+        echo "I don't know what these options mean"
+    esac
+}
+
+
 ## User specific environment and startup programs
 #
 #PATH=$PATH:$HOME/.local/bin:$HOME/bin
