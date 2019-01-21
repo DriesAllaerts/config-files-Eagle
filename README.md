@@ -1,6 +1,7 @@
-# config-files-Peregrine
+# config-files
 
-- General configuration files for the Peregrine HPC system
+- General configuration files for HPC systems
+  (currently for the Peregrine HPC system)
 - Python environment setup files
 - Vim configuration file
 - Ipython configuration file
