@@ -87,7 +87,7 @@ gitdeactivate()
 sourcePYTHON3()
 {
     module purge
-    module load conda/5.1
+    module load conda
     source activate py3env
     export PYTHONPATH=/home/dallaert/Python:/home/dallaert/PostTools:$PYTHONPATH
     export PATH=/home/dallaert/PostTools:$PATH
@@ -168,7 +168,6 @@ ijob() {
         echo "I don't know what these options mean"
     esac
 }
-
 
 ## User specific environment and startup programs
 #
