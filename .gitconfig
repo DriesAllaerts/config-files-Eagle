@@ -8,13 +8,14 @@
 	filemode = false
 	editor = vim
 [alias]
-	tree = log --all --graph --decorate --oneline --color --simplify-by-decoration
-	longtree = log --all --graph --decorate --oneline --color
+	shorttree = log --all --graph --decorate --oneline --color --simplify-by-decoration
+	tree = log --all --graph --decorate --oneline --color
     co = checkout
     ci = commit
     st = status
     last = log -1 HEAD
     br = branch
     bra = branch -a
+    brv = branch -vv
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(black)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     rmv = remote -v
