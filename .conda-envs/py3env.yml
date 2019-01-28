@@ -1,3 +1,5 @@
+#Command to create the python environment:
+#conda env create -f py3env.yml
 name: py3env
 dependencies:
   - python=3.6.*
