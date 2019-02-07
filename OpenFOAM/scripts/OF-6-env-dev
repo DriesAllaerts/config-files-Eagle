@@ -1,0 +1,60 @@
+#!/bin/bash
+OpenFOAM-6-dev()
+{
+   # Important locations.
+   export inst_loc=/home/$USER/OpenFOAM
+   export spack_loc=/nopt/nrel/ecom/wind
+   export sowfa_loc=/home/$USER/OpenFOAM
+
+   # Load the right modules.
+   echo "Purging and loading modules..."
+   module purge
+   module use $spack_loc/spack/share/spack/modules/linux-centos7-x86_64
+   module load gcc-7.3.0-gcc-4.8.5-5ie3ftu
+   module load openmpi-3.1.3-gcc-7.3.0-mdjp77s
+   module load cgal-4.12-gcc-7.3.0-3245y25
+   module load boost-1.69.0-gcc-7.3.0-w63dy2q
+   module load mpfr-4.0.1-gcc-7.3.0-pfxdftl
+   module load gmp-6.1.2-gcc-7.3.0-rvionww
+   module load scotch-6.0.6-gcc-7.3.0-nygso5q
+   module load metis-5.1.0-gcc-7.3.0-fz6wi6f
+   module load flex-2.6.3-gcc-7.3.0-vmquuua
+   module load hdf5-1.10.4-gcc-7.3.0-kyh5kn7
+   module load openblas-0.3.5-gcc-7.3.0-zncvk4j
+   module load openfast-develop-gcc-7.3.0-yksmchc
+   module list
+
+   # Unset OpenFOAM environment variables.
+   if [ -z "$FOAM_INST_DIR" ]; then
+      echo "Nothing to unset..."
+   else
+      echo "     *Unsetting OpenFOAM environment variables..."
+      . $FOAM_INST_DIR/OpenFOAM-$OPENFOAM_VERSION/etc/config.sh/unset
+   fi
+
+   # Set the OpenFOAM version and installation directory
+   export OPENFOAM_VERSION=6
+   export OPENFOAM_NAME=OpenFOAM-$OPENFOAM_VERSION
+   export FOAM_INST_DIR=$inst_loc
+   export WM_PROJECT_USER_DIR=/home/$USER/$USER-$OPENFOAM_VERSION
+   export FOAMY_HEX_MESH=true
+   
+   # Source the OpenFOAM main environment.
+   foamDotFile=$FOAM_INST_DIR/$OPENFOAM_NAME/etc/bashrc
+   if [ -f $foamDotFile ] ; then
+      echo "Sourcing $foamDotFile..."
+      source $foamDotFile
+   fi
+
+   # For wmake compiling.
+   export WM_NCOMPPROCS=24
+   export WM_COLOURS="white blue green cyan red magenta yellow"
+
+   # Alias to tutorials.
+   alias tut='cd /home/$USER/OpenFOAM/$USER-$OPENFOAM_VERSION/tutorials'
+   
+   # Set the SOWFA installation directory.
+   export SOWFA_DIR=$sowfa_loc/SOWFA-$OPENFOAM_VERSION
+   export LD_LIBRARY_PATH=$SOWFA_DIR/lib/$WM_OPTIONS:$OPENFAST_DIR/lib:$LD_LIBRARY_PATH
+   export PATH=$SOWFA_DIR/applications/bin/$WM_OPTIONS:$PATH
+}
