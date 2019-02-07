@@ -12,6 +12,12 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 
+## User specific environment and startup programs
+
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+
+
 # get current branch in git repo
 function parse_git_branch() {
 BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -95,6 +101,7 @@ sourcePYTHON3()
 }
 
 
+# Copy OpenFOAM simulation directory structure
 foamCopyCase()
 {
     if [ $# -lt 2 ]; then
@@ -169,8 +176,31 @@ ijob() {
     esac
 }
 
-## User specific environment and startup programs
-#
-#PATH=$PATH:$HOME/.local/bin:$HOME/bin
-#
-#export PATH
+# Paraview
+Paraview-5.6.0()
+{
+   module purge
+   module load openmpi/3.1.3/gcc-7.3.0
+   export PATH=/home/mchurchf/packages/ParaView-5.6.0-MPI-Linux-64bit/bin:$PATH
+   export LD_LIBRARY_PATH=/home/mchurchf/packages/ParaView-5.6.0-MPI-Linux-64bit/lib:$LD_LIBRARY_PATH
+  #export LD_LIBRARY_PATH=/nopt/torque/lib:$LD_LIBRARY_PATH
+}
+
+
+
+# Nalu
+Nalu-wind()
+{
+   source /projects/hfm/shreyas/exawind/scripts/exawind-env-gcc.sh
+}
+
+
+
+# OpenFOAM
+source /nopt/nrel/ecom/wind/OpenFOAM/OF-2.4.x-env-central
+source /nopt/nrel/ecom/wind/OpenFOAM/OF-6-env-central
+source /nopt/nrel/ecom/wind/OpenFOAM/OF-v1812-env-central
+source /home/$USER/OpenFOAM/scripts/OF-2.4.x-env-pro
+source /home/$USER/OpenFOAM/scripts/OF-2.4.x-env-dev
+source /home/$USER/OpenFOAM/scripts/OF-6-env-dev
+source /home/$USER/OpenFOAM/scripts/OF-v1812-env-dev
