@@ -29,7 +29,11 @@ OpenFOAM-2.4.x-pro()
       echo "Nothing to unset..."
    else
       echo "     *Unsetting OpenFOAM environment variables..."
-      . $FOAM_INST_DIR/OpenFOAM-$OPENFOAM_VERSION/etc/config/unset.sh
+      if [ -f "$FOAM_INST_DIR/OpenFOAM-$OPENFOAM_VERSION/etc/config.sh/unset" ]; then
+         . $FOAM_INST_DIR/OpenFOAM-$OPENFOAM_VERSION/etc/config.sh/unset
+      else
+         . $FOAM_INST_DIR/OpenFOAM-$OPENFOAM_VERSION/etc/config/unset.sh
+      fi
    fi
 
    # Set the OpenFOAM version and installation directory
