@@ -58,7 +58,7 @@ OpenFOAM-6-dev()
    alias tut='cd /home/$USER/OpenFOAM/$USER-$OPENFOAM_VERSION/tutorials'
    
    # Set the SOWFA installation directory.
-   export SOWFA_DIR=$sowfa_loc/SOWFA-$OPENFOAM_VERSION
+   export SOWFA_DIR=$sowfa_loc/SOWFA-$OPENFOAM_VERSION-dev
    export LD_LIBRARY_PATH=$SOWFA_DIR/lib/$WM_OPTIONS:$OPENFAST_DIR/lib:$LD_LIBRARY_PATH
    export PATH=$SOWFA_DIR/applications/bin/$WM_OPTIONS:$PATH
 }
