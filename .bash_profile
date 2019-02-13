@@ -1,5 +1,6 @@
 # .bash_profile
 
+
 # Get functions in .bashrc
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
@@ -17,6 +18,8 @@ fi
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
+## Add pylib/bin with Eliot's tools to PATH
+export PATH=$PATH:$HOME/tools/pylib/bin
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -95,9 +98,7 @@ sourcePYTHON3()
     module purge
     module load conda
     source activate py3env
-    export PYTHONPATH=/home/dallaert/Python:/home/dallaert/PostTools:$PYTHONPATH
-    export PATH=/home/dallaert/PostTools:$PATH
-    export PATH=/home/dallaert/PostTools/datatools/utilities:$PATH
+    export PYTHONPATH=$PYTHONPATH:/home/dallaert/tools
 }
 
 
@@ -203,4 +204,4 @@ source /nopt/nrel/ecom/wind/OpenFOAM/OF-v1812-env-central
 source /home/$USER/OpenFOAM/scripts/OF-2.4.x-env-pro
 source /home/$USER/OpenFOAM/scripts/OF-2.4.x-env-dev
 source /home/$USER/OpenFOAM/scripts/OF-6-env-dev
-source /home/$USER/OpenFOAM/scripts/OF-v1812-env-dev
+#source /home/$USER/OpenFOAM/scripts/OF-v1812-env-dev
