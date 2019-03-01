@@ -20,6 +20,8 @@ export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
 ## Add pylib/bin with Eliot's tools to PATH
 export PATH=$PATH:$HOME/tools/pylib/bin
+## Add datatools/utilities to PATH
+export PATH=$PATH:$HOME/tools/datatools/utilities
 
 # get current branch in git repo
 function parse_git_branch() {
