@@ -15,8 +15,8 @@ alias mmc_storage='cd /mss/projects/mmc'
 
 alias vi='vim'
 
-alias dqstat='qstat -u dallaert'
-alias dshowq='showq -u dallaert'
+alias dshowq='squeue -u dallaert -l'
+alias dsinfo='sinfo -o %A'
 
 alias qme='watch -n 1 "qstat -u dallaert"'
 alias goparaview='Paraview-5.0.0 && vglrun paraview'
