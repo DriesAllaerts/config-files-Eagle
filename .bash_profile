@@ -22,6 +22,8 @@ export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 export PATH=$PATH:$HOME/tools/pylib/bin
 ## Add datatools/utilities to PATH
 export PATH=$PATH:$HOME/tools/datatools/utilities
+## Add pytools/utilities to PATH
+export PATH=$PATH:$HOME/tools/pytools/utilities
 
 # get current branch in git repo
 function parse_git_branch() {
