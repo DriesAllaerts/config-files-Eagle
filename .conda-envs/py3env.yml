@@ -10,6 +10,7 @@ dependencies:
   - pandas
   - matplotlib
   - ipython
+  - ipykernel
   - netCDF4
   - mpi4py
   - vtk
