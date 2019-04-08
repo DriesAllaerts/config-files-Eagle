@@ -1,5 +1,5 @@
 #!/bin/bash
-OpenFOAM-2.4.x-dev()
+OpenFOAM-2.4.x-local()
 {
    # Important locations.
    export inst_loc=/home/$USER/OpenFOAM
@@ -58,14 +58,18 @@ OpenFOAM-2.4.x-dev()
 
    # Set the SOWFA installation directory.
    if [ $# == 0 ]; then
-       export SOWFA_NAME=SOWFA-$OPENFOAM_VERSION-dev
+       export SOWFA_NAME=pro
    else
        export SOWFA_NAME=$1
    fi
 
-   export SOWFA_DIR=$sowfa_loc/$SOWFA_NAME
+   export SOWFA_DIR=$sowfa_loc/SOWFA-$OPENFOAM_VERSION-$SOWFA_NAME
    export LD_LIBRARY_PATH=$SOWFA_DIR/lib/$WM_OPTIONS:$OPENFAST_DIR/lib:$LD_LIBRARY_PATH
    export PATH=$SOWFA_DIR/applications/bin/$WM_OPTIONS:$PATH
 
-   echo "Using SOWFA distribution in $SOWFA_DIR"
+   if [ ! -d $SOWFA_DIR ]; then
+        echo "Warning: SOWFA directory $SOWFA_DIR not found"
+   else
+        echo "Using SOWFA distribution in $SOWFA_DIR"
+   fi
 }
