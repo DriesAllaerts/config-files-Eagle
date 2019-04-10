@@ -5,7 +5,6 @@
 	default = simple
 [core]
 	fileMode = false
-	filemode = false
 	editor = vim
 [alias]
 	shorttree = log --all --graph --decorate --oneline --color --simplify-by-decoration
