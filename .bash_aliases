@@ -15,7 +15,8 @@ alias mmc_storage='cd /mss/projects/mmc'
 
 alias vi='vim'
 
-alias dshowq='squeue -u dallaert -l'
+#alias dshowq='squeue -u dallaert -l'
+alias dshowq='squeue -u dallaert --Format="JobID,partition,name:30,state,timeused,timelimit,numnodes"'
 alias dsinfo='sinfo -o %A'
 
 alias qme='watch -n 1 "qstat -u dallaert"'
