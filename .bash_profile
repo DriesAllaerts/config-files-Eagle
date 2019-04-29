@@ -1,5 +1,15 @@
 # .bash_profile
 
+# Set default file permissions
+#                  u   g   o         bit_values    chmod
+# umask 0077   >   rwx --- ---   >   700 600   >   u=rwX,go= 
+# umask 0007   >   rwx rwx ---   >   770 660   >   ug=rwX,o= 
+# umask 0027   >   rwx r-x ---   >   750 640   >   u=rwX,g=rX,o= 
+# umask 0022   >   rwx r-x r-x   >   755 644   >   u=rwX,go=rX 
+# umask 0002   >   rwx rwx r-x   >   775 664   >   ug=rwX,o=rX 
+# umask 0000   >   rwx rwx rwx   >   777 666   >   a=rwX 
+umask 0002
+
 
 # Get functions in .bashrc
 if [ -f ~/.bashrc ]; then
