@@ -9,6 +9,7 @@ alias ed2='ssh -Y ed2.hpc.nrel.gov'
 alias ed3='ssh -Y ed3.hpc.nrel.gov'
 
 alias mmc='cd /projects/mmc'
+alias swift='cd /projects/mmc/SWIFTRegion/8Nov2013'
 alias scratch='cd /scratch/dallaert'
 alias mstorage='cd /mss/users/dallaert'
 alias mmc_storage='cd /mss/projects/mmc'
