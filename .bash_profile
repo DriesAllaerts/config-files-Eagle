@@ -112,7 +112,7 @@ sourcePYTHON3()
     module purge
     module load conda
     source activate py3env
-    export PYTHONPATH=$PYTHONPATH:/home/dallaert/tools
+    export PYTHONPATH=$PYTHONPATH:/home/dallaert/tools:/home/dallaert/tools/a2e-mmc
 }
 
 
