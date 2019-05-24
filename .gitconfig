@@ -16,5 +16,5 @@
     br = branch
     bra = branch -a
     brv = branch -vv
-    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(black)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %an (%ar)' --all --color
     rmv = remote -v
