@@ -18,7 +18,9 @@ alias vi='vim'
 
 #alias dshowq='squeue -u dallaert -l'
 alias dshowq='squeue -u dallaert --Format="JobID,partition,name:30,state,timeused,timelimit,numnodes"'
-alias dsinfo='sinfo -o %A'
+#alias dsinfo='sinfo -o %A'
+alias dsinfo="sinfo -o '%24P %.5a  %.12l  %.16F'"
+alias dsinfol="sinfo -o '%24P %.5a  %.12l  %.16F %T'"
 
 alias qme='watch -n 1 "qstat -u dallaert"'
 alias goparaview='Paraview-5.0.0 && vglrun paraview'
