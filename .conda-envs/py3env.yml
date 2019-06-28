@@ -16,3 +16,4 @@ dependencies:
   - vtk
   - ffmpeg
   - xarray
+  - jupyter
