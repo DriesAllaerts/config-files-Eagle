@@ -18,3 +18,4 @@
     brv = branch -vv
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %an (%ar)' --all --color
     rmv = remote -v
+	alias = config --get-regexp ^alias\\.
