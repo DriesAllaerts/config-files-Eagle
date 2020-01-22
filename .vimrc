@@ -33,11 +33,17 @@ set background=light
 "set background=light
 "colorscheme solarized
 set guifont=Inconsolata\ 10
-set autoindent
+
+" Indentation
+"set autoindent      " use the indent from the previous line.
+set smartindent     " is like 'autoindent' but also recognizes some C syntax to
+                    "     increase/reduce the indent where appropriate.
+                    "     (overwrites autoindent if enabled)
 
 set foldmethod=indent
 "set foldmethod=syntax
 set foldnestmax=2
+set foldlevelstart=2
 "let fortran_fold=1
 
 "-----------------------------------------------------
@@ -71,9 +77,11 @@ nnoremap , :noh<Enter>
 " Repeat action for multiple lines
 vnoremap . :normal .<CR>
 
-
 set noswapfile
-set number
+
+" Line numbering
+set number          " Enable
+"set nonumber        " Disable
 
 "Use a tab width of 4 space chars.
 set tabstop=4       " The width of a TAB is set to 4.
@@ -82,14 +90,18 @@ set tabstop=4       " The width of a TAB is set to 4.
                     " a width of 4.
 set shiftwidth=4    " Indents will have a width of 4.
 set softtabstop=4   " Sets the number of columns for a TAB.
-set expandtab       " Expand TABs to spaces."set wm=0
+set expandtab       " Expand TABs to spaces.
+set smarttab        " Insert tabs on the start of a line according to
+                    "     shiftwidth, not tabstop
 
-set nowrap
-"set linebreak
+" Line wrapping
+"set wrap            " Enable line wrapping
+"set linebreak       " Do not split words across two lines
+"set wm=0            " Set 'wrapmargin': margin for wrapped lines
+"set tw=72           " Set 'textwidth': width after which wrapping is applied
+set nowrap          " Disable line wrapping
+
+" hide hidden charachters
 set nolist
 
-set ai
-set si 
-set smarttab
-
-set tw=100000
+set showmatch       " set show matching parenthesis

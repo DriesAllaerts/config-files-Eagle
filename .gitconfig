@@ -1,14 +1,14 @@
 [user]
-	email = dries.allaerts@nrel.gov
-	name = Dries Allaerts
+    email = dries.allaerts@nrel.gov
+    name = Dries Allaerts
 [push]
-	default = simple
+    default = simple
 [core]
-	fileMode = false
-	editor = vim
+    fileMode = false
+    editor = vim
 [alias]
-	shorttree = log --all --graph --decorate --oneline --color --simplify-by-decoration
-	tree = log --all --graph --decorate --oneline --color
+    shorttree = log --all --graph --decorate --oneline --color --simplify-by-decoration
+    tree = log --all --graph --decorate --oneline --color
     co = checkout
     ci = commit
     st = status
@@ -18,4 +18,4 @@
     brv = branch -vv
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %an (%ar)' --all --color
     rmv = remote -v
-	alias = config --get-regexp ^alias\\.
+    alias = config --get-regexp ^alias\\.

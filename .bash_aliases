@@ -1,6 +1,13 @@
-# Aliases
+# .bash_aliases file containing custom aliases
+
+# Use vim instead of vi
+alias vi='vim'
+
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -alF'
 #alias ls='ls -alh --color=auto'
-alias ls='ls -X --color=auto'
+
 alias el1='ssh -Y el1.hpc.nrel.gov'
 alias el2='ssh -Y el2.hpc.nrel.gov'
 alias el3='ssh -Y el3.hpc.nrel.gov'
@@ -13,8 +20,6 @@ alias swift='cd /projects/mmc/SWIFTRegion/8Nov2013'
 alias scratch='cd /scratch/dallaert'
 alias mstorage='cd /mss/users/dallaert'
 alias mmc_storage='cd /mss/projects/mmc'
-
-alias vi='vim'
 
 #alias dshowq='squeue -u dallaert -l'
 alias dshowq='squeue -u dallaert --Format="JobID,partition,name:30,state,timeused,timelimit,numnodes"'
