@@ -1,7 +1,6 @@
-# config-files
+# config-files-Eagle
 
-- General configuration files for HPC systems
-  (currently for the Eagle HPC system)
+- Configuration files for NREL's Eagle HPC system
 - Python environment setup files
 - Vim configuration file
 - Ipython configuration file
