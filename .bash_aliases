@@ -17,21 +17,21 @@ alias ed3='ssh -Y ed3.hpc.nrel.gov'
 
 alias mmc='cd /projects/mmc'
 alias swift='cd /projects/mmc/SWIFTRegion/8Nov2013'
-alias scratch='cd /scratch/dallaert'
-alias mstorage='cd /mss/users/dallaert'
+alias scratch='cd /scratch/$USER'
+alias mstorage='cd /mss/users/$USER'
 alias mmc_storage='cd /mss/projects/mmc'
 
-#alias dshowq='squeue -u dallaert -l'
-alias dshowq='squeue -u dallaert --Format="JobID,partition,name:30,state,timeused,timelimit,numnodes"'
+#alias dshowq='squeue -u $USER -l'
+alias dshowq='squeue -u $USER --Format="JobID,partition,name:30,state,timeused,timelimit,numnodes"'
 #alias dsinfo='sinfo -o %A'
 alias dsinfo="sinfo -o '%24P %.5a  %.12l  %.16F'"
 alias dsinfol="sinfo -o '%24P %.5a  %.12l  %.16F %T'"
 
-alias qme='watch -n 1 "qstat -u dallaert"'
+alias qme='watch -n 1 "qstat -u $USER"'
 alias goparaview='Paraview-5.0.0 && vglrun paraview'
 alias py='python'
 alias ipy='ipython'
-alias newpy='cp /home/dallaert/pytools/templates/templatePythonScriptSerial.py '
-alias newpypar='cp /home/dallaert/pytools/templates/templatePythonScriptParallel.py '
+alias newpy='cp /home/$USER/pytools/templates/templatePythonScriptSerial.py '
+alias newpypar='cp /home/$USER/pytools/templates/templatePythonScriptParallel.py '
 alias hipy='sourcePYTHON3'
 alias byepy='source deactivate'
