@@ -212,9 +212,10 @@ Nalu-wind()
 
 
 # OpenFOAM
-source /nopt/nrel/ecom/wind/OpenFOAM/OF-2.4.x-env-central
-source /nopt/nrel/ecom/wind/OpenFOAM/OF-6-env-central
-source /nopt/nrel/ecom/wind/OpenFOAM/OF-v1812-env-central
+#source /nopt/nrel/ecom/wind/OpenFOAM/OF-2.4.x-env-central
+#source /nopt/nrel/ecom/wind/OpenFOAM/OF-6-env-central
+#source /nopt/nrel/ecom/wind/OpenFOAM/OF-v1812-env-central
+#THESE LINKS NO LONGER WORK
 source /home/$USER/OpenFOAM/scripts/OF-2.4.x-env-local
 source /home/$USER/OpenFOAM/scripts/OF-6-env-dev
 #source /home/$USER/OpenFOAM/scripts/OF-v1812-env-dev
