@@ -35,3 +35,5 @@ alias newpy='cp /home/$USER/pytools/templates/templatePythonScriptSerial.py '
 alias newpypar='cp /home/$USER/pytools/templates/templatePythonScriptParallel.py '
 alias hipy='sourcePYTHON3'
 alias byepy='source deactivate'
+
+alias touchall='find . -type f -exec touch {} +'
